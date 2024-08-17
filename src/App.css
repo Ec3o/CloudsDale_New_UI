@@ -1,0 +1,31 @@
+body {
+  background-color: #7432b5;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center; 
+  overflow: hidden;
+}
+
+.navbar {
+  position: relative; /* 不再使用fixed，依赖父容器的flex布局 */
+  width: 80px;
+  height: 400px;
+  background-color: #fff;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  border-radius: 50px 0 0 50px; /* 右侧圆角 */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+.TeamTitleCard{
+  transform: translate(500px,0px);
+}
+.TeamTitleCard {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 100vh; /* 让父容器占据整个屏幕高度，确保子元素垂直居中 */
+}

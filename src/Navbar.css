@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Arial", sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background: #2b2f77;
+  }
+  
+  .navbar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 700px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 50px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+  
+  .navbar.collapsed {
+    width: 16px; /* 收缩80%的效果 */
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  
+  .navbar ul li {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar.collapsed ul li {
+    opacity: 0; /* 隐藏图标 */
+    transform: scale(0.5); /* 缩小图标 */
+  }
+  
+  .navbar ul li .icon {
+    font-size: 24px;
+    color: #fff;
+  }
+  .navbar ul li:not(.active):hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
+    background-color: #9896f6;
+    border-radius: 50%;
+  }
+  .navbar ul li:hover .text{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .navbar ul li .text {
+    position: absolute;
+    left: 100px;
+    font-size: 16px;
+    font-family: 'Lilita One';
+    color: #fff;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar ul li.active .text {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* 高亮圆圈部分 */
+  .highlighter {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #6e6bfa;
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 分割线 */
+  .navbar ul li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 60px;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.3); /* 灰色的分割线 */
+  }
+  

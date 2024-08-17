@@ -1,0 +1,95 @@
+.TeamTitleCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .TeamTitleCard .e-card {
+    margin: 0 auto; /* 移除 margin: 100px auto; 以确保它在父容器内部居中 */
+    background: transparent;
+    box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+    position: relative;
+    width: 240px;
+    height: 330px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .TeamTitleCard .wave {
+    position: absolute;
+    width: 540px;
+    height: 700px;
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    margin-left: -50%;
+    margin-top: -70%;
+    background: linear-gradient(744deg,#af40ff,#5b42f3 60%,#00ddeb);
+  }
+  
+  .TeamTitleCard .icon {
+    width: 3em;
+    margin-top: -1em;
+    padding-bottom: 1em;
+  }
+  
+  .TeamTitleCard .infotop {
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    top: 5.6em;
+    left: 0;
+    right: 0;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+  
+  .TeamTitleCard .name {
+    font-size: 14px;
+    font-weight: 100;
+    position: relative;
+    top: 1em;
+    text-transform: lowercase;
+  }
+  
+  .TeamTitleCard .wave:nth-child(2),
+  .TeamTitleCard .wave:nth-child(3) {
+    top: 210px;
+  }
+  
+  .TeamTitleCard.playing .wave {
+    border-radius: 40%;
+    animation: wave 3000ms infinite linear;
+  }
+  
+  .TeamTitleCard .wave {
+    border-radius: 40%;
+    animation: wave 55s infinite linear;
+  }
+  
+  .TeamTitleCard .playing .wave:nth-child(2) {
+    animation-duration: 4000ms;
+  }
+  
+  .TeamTitleCard .wave:nth-child(2) {
+    animation-duration: 50s;
+  }
+  
+  .TeamTitleCard .playing .wave:nth-child(3) {
+    animation-duration: 5000ms;
+  }
+  
+  .TeamTitleCard .wave:nth-child(3) {
+    animation-duration: 45s;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
