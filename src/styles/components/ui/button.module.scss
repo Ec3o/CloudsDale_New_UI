@@ -1,0 +1,48 @@
+.btn {
+    @apply fw-600 flex-inline items-center justify-center cursor-pointer pos-relative rounded-md transition-all duration-300 ease-in-out;
+    border: 5px black solid;
+    &.solid {
+        @apply bg-[var(--btn-bg-color)] text-[var(--btn-text-color)];
+    }
+
+    &.outline {
+        @apply bg-transparent text-[var(--btn-bg-color)] border-[var(--btn-bg-color)] border-solid border-2;
+    }
+
+    &.ghost {
+        @apply bg-transparent text-[var(--btn-bg-color)];
+    }
+
+    &.sm {
+        @apply px-2 py-1 text-sm;
+    }
+
+    &.md {
+        @apply px-4 py-2 text-base;
+    }
+
+    &.lg {
+        @apply px-6 py-3 text-lg;
+    }
+
+    &.loading {
+        @apply cursor-not-allowed pointer-events-none;
+
+        &::after {
+            content: "";
+            position: absolute;
+            border: 2px solid var(--btn-text-color);
+            border-top-color: transparent;
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+            animation: spin 1s linear infinite;
+        }
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
